@@ -12,6 +12,7 @@ jobs:
         run: npm run test
   lint_react_app:
     runs-on: ubuntu-latest
+    needs: test_react_app
     steps:
       - name: Get the repository code
         uses: actions/checkout@v3
@@ -21,6 +22,7 @@ jobs:
         run: npm run lint
   build_react_app:
     runs-on: ubuntu-latest
+    needs: lint_react_app
     steps:
       - name: Get the repository code
         uses: actions/checkout@v3
