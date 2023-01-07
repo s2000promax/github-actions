@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - 'main'
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   test_react_app:
     runs-on: ubuntu-latest
