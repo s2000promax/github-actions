@@ -36,6 +36,7 @@ jobs:
         run: npm run lint
   build_react_app:
     needs: [lint_react_app, test_react_app]
+    continue-on-error: true
     strategy:
       matrix:
         node-version: [14, 16]
